@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ThreadStyle | Apparel & Fashion</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <a class="logo" href="#home">Thread<span>Style</span></a>
+  <button class="menu-btn" id="menuBtn">☰</button>
+  <nav id="nav">
+    <a href="#home">Home</a>
+    <a href="#categories">Categories</a>
+    <a href="#products">Products</a>
+    <a href="#about">About</a>
+    <button class="bag-btn" id="bagBtn">Bag (<span id="bagCount">0</span>)</button>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div>
+    <p class="eyebrow">THREADSTYLE • APPAREL & FASHION</p>
+    <h1>Everyday style,<br><em>made simple.</em></h1>
+    <p class="hero-text">Discover comfortable, versatile apparel with clear product information and an easy shopping experience.</p>
+    <a class="primary" href="#products">Explore Collection</a>
+  </div>
+</section>
+
+<section class="section" id="categories">
+  <div class="section-head"><div><p class="eyebrow">SHOP BY CATEGORY</p><h2>Find your style</h2></div></div>
+  <div class="categories">
+    <button class="cat-card" data-category="Men">Men</button>
+    <button class="cat-card" data-category="Women">Women</button>
+    <button class="cat-card" data-category="T-Shirts">T-Shirts</button>
+    <button class="cat-card" data-category="Jeans">Jeans</button>
+  </div>
+</section>
+
+<section class="section" id="products">
+  <div class="section-head">
+    <div><p class="eyebrow">PRODUCT CATALOGUE</p><h2>Latest collection</h2></div>
+  </div>
+  <div class="controls">
+    <input id="search" type="search" placeholder="Search apparel...">
+    <select id="categoryFilter"><option value="All">All categories</option><option>Men</option><option>Women</option><option>T-Shirts</option><option>Jeans</option></select>
+    <select id="colourFilter"><option value="All">All colours</option><option>Black</option><option>White</option><option>Blue</option><option>Beige</option></select>
+    <select id="sizeFilter"><option value="All">All sizes</option><option>S</option><option>M</option><option>L</option><option>XL</option></select>
+    <select id="sort"><option value="default">Sort</option><option value="low">Price: Low to High</option><option value="high">Price: High to Low</option></select>
+  </div>
+  <div class="products" id="productsGrid"></div>
+</section>
+
+<section class="section about" id="about">
+  <p class="eyebrow">ABOUT THREADSTYLE</p>
+  <h2>A junior web-development project for modern apparel shopping.</h2>
+  <p>Week 2 focuses on front-end prototype and UX. Product data, APIs, inventory integration and order functionality are planned for later internship weeks.</p>
+</section>
+</main>
+
+<div class="modal" id="productModal">
+  <div class="modal-box">
+    <button class="close" id="closeModal">×</button>
+    <img id="modalImage" alt="">
+    <div class="modal-info">
+      <p class="eyebrow" id="modalCategory"></p>
+      <h2 id="modalName"></h2>
+      <p class="price" id="modalPrice"></p>
+      <p id="modalDescription"></p>
+      <p><strong>Colour:</strong> <span id="modalColour"></span></p>
+      <p><strong>Availability:</strong> <span id="modalAvailability"></span></p>
+      <label><strong>Size</strong>
+        <select id="modalSize"><option>S</option><option>M</option><option>L</option><option>XL</option></select>
+      </label>
+      <button class="primary full" id="addToBag">Add to Bag</button>
+    </div>
+  </div>
+</div>
+
+<aside class="cart" id="cart">
+  <div class="cart-head"><h2>Your Bag</h2><button id="closeCart">×</button></div>
+  <div id="cartItems"></div>
+  <div class="cart-total">Subtotal <strong>₹<span id="subtotal">0</span></strong></div>
+  <button class="primary full">Checkout — Coming Soon</button>
+</aside>
+<div class="overlay" id="overlay"></div>
+<footer>© 2026 ThreadStyle • Week 2 Front-End Prototype</footer>
+<script src="script.js"></script>
+</body>
+</html>
