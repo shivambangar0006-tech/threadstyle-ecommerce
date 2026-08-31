@@ -1,0 +1,94 @@
+{
+  "info": {
+    "name": "ThreadStyle Week 3 API",
+    "_postman_id": "threadstyle-week3-api",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/"
+      }
+    },
+    {
+      "name": "Get Products",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/products"
+      }
+    },
+    {
+      "name": "Get Categories",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/categories"
+      }
+    },
+    {
+      "name": "Create Category",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\":\"T-Shirts\"}"
+        },
+        "url": "{{baseUrl}}/api/categories"
+      }
+    },
+    {
+      "name": "Create Product",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\":\"Classic Black T-Shirt\",\"description\":\"Cotton crew-neck T-shirt\",\"price\":799,\"category\":\"CATEGORY_ID_HERE\",\"size\":[\"S\",\"M\",\"L\",\"XL\"],\"color\":\"Black\",\"stock\":25,\"image\":\"https://example.com/tshirt.jpg\"}"
+        },
+        "url": "{{baseUrl}}/api/products"
+      }
+    },
+    {
+      "name": "Create Order",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"customerName\":\"Demo Customer\",\"email\":\"demo@example.com\",\"items\":[{\"product\":\"PRODUCT_ID_HERE\",\"quantity\":1}],\"shippingAddress\":\"Nagpur, Maharashtra\"}"
+        },
+        "url": "{{baseUrl}}/api/orders"
+      }
+    },
+    {
+      "name": "Get Orders",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/orders"
+      }
+    }
+  ]
+}
